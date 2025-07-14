@@ -1,5 +1,6 @@
 package com.OnetoOne.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,4 +18,9 @@ public class Book {
     private long id;
     private String bookName;
     private String authorName;
+
+    @OneToOne
+    @JoinColumn(name = "student_id", referencedColumnName = "id")
+    @JsonBackReference
+    private Student student;
 }

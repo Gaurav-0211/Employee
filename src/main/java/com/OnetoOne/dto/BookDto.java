@@ -13,4 +13,5 @@ public class BookDto {
     private long id;
     private String bookName;
     private String authorName;
+    private StudentDto student;
 }
