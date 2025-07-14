@@ -1,13 +1,13 @@
 package com.emp.controller;
 
 import com.emp.dto.EmployeeDto;
+import com.emp.dto.ProjectDto;
 import com.emp.service.EmployeeService;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,8 +18,8 @@ public class EmployeeController {
     EmployeeService employeeService;
 
     @PostMapping
-    public EmployeeDto createEmployee(EmployeeDto employeeDto){
-        return employeeService.createEmployee(employeeDto);
+    public ResponseEntity<EmployeeDto> createProject(@Validated @RequestBody EmployeeDto dto) {
+        return ResponseEntity.ok(employeeService.createEmployee(dto));
     }
 
     @GetMapping

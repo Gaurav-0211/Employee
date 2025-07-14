@@ -20,9 +20,16 @@ import java.util.stream.Collectors;
 
      @Override
      public ProjectDto createProject(ProjectDto dto) {
-         Project project = mapper.map(dto, Project.class);
+         Project project = new Project();
+         project.setProjectName(dto.getProjectName());
+         project.setDuration(dto.getDuration());
+
          Project saved = projectRepo.save(project);
-         return mapper.map(saved, ProjectDto.class);
+
+         ProjectDto result = new ProjectDto();
+         result.setProjectName(saved.getProjectName());
+         result.setDuration(saved.getDuration());
+         return result;
         }
 
         @Override

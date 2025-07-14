@@ -1,5 +1,6 @@
 package com.emp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,5 +22,6 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn(name = "project_id")
+    @JsonIgnore // Prevent from Infinite loop
     private Project project;
 }

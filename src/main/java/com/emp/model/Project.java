@@ -17,10 +17,8 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "projectName", nullable = false)
     private String projectName;
 
-    @Column(name= "duration", nullable = false)
     private String duration;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)

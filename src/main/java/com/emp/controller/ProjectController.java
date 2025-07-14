@@ -3,10 +3,9 @@ package com.emp.controller;
 import com.emp.dto.ProjectDto;
 import com.emp.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,9 +16,10 @@ public class ProjectController {
     ProjectService projectService;
 
     @PostMapping
-    public ProjectDto createProject(ProjectDto projectDto){
-        return projectService.createProject(projectDto);
+    public ResponseEntity<ProjectDto> createProject(@Validated @RequestBody ProjectDto projectDto) {
+        return ResponseEntity.ok(projectService.createProject(projectDto));
     }
+
 
     @GetMapping
     public List<ProjectDto> getAll(){
