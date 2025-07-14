@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -50,6 +51,12 @@ public class EmployeeServiceImpl implements EmployeeService {
                     dto.setProjectId(emp.getProject().getId());
                     return dto;
                 }).collect(Collectors.toList());
+    }
+
+    @Override
+    public Optional<EmployeeDto> getEmployeeById(long id) {
+        Optional<Employee> employeeOpt = employeeRepository.findById(id);
+        return employeeOpt.map(employee -> mapper.map(employee, EmployeeDto.class));
     }
 
 }

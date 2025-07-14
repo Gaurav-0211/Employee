@@ -1,9 +1,8 @@
 package com.emp.controller;
 
 import com.emp.dto.EmployeeDto;
-import com.emp.dto.ProjectDto;
+import com.emp.model.Employee;
 import com.emp.service.EmployeeService;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -26,5 +25,13 @@ public class EmployeeController {
     public List<EmployeeDto> getAllEmployee(){
         return employeeService.getAllEmployees();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable long id) {
+        return employeeService.getEmployeeById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
 
 }

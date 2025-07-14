@@ -1,5 +1,6 @@
 package com.emp.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,8 +20,9 @@ public class Project {
 
     private String projectName;
 
-    private String duration;
+        private String duration;
 
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Employee> employees;
 }
