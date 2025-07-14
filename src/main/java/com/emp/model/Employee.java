@@ -22,6 +22,6 @@ public class Employee {
 
     @ManyToOne
     @JoinColumn(name = "project_id")
-    @JsonIgnore // Prevent from Infinite loop
+    @JsonIgnore // Prevent from Infinite loop in a json file
     private Project project;
 }

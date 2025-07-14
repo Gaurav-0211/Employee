@@ -1,25 +1,32 @@
 package com.emp.service.impl;
 
 import com.emp.dto.EmployeeDto;
-import com.emp.dto.ProjectDto;
 import com.emp.model.Employee;
 import com.emp.model.Project;
 import com.emp.repo.EmployeeRepository;
 import com.emp.repo.ProjectRepository;
 import com.emp.service.EmployeeService;
-import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
-@RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
-    EmployeeRepository employeeRepository;
-    ModelMapper mapper;
-    ProjectRepository projectRepository;
+    private final EmployeeRepository employeeRepository;
+    private final ModelMapper mapper;
+    private final ProjectRepository projectRepository;
+
+    @Autowired
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository, ModelMapper mapper,
+                               ProjectRepository projectRepository) {
+        this.employeeRepository = employeeRepository;
+        this.mapper = mapper;
+        this.projectRepository = projectRepository;
+    }
+
 
     @Override
     public EmployeeDto createEmployee(EmployeeDto dto) {
