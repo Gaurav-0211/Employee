@@ -1,4 +1,4 @@
-package com.OnetoOne.model;
+package com.emp.OnetoOne.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;

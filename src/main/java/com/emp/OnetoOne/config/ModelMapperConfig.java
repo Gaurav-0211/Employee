@@ -1,4 +1,4 @@
-package com.OnetoOne.config;
+package com.emp.OnetoOne.config;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;

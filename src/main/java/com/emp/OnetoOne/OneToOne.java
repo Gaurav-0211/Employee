@@ -1,4 +1,4 @@
-package com.OnetoOne;
+package com.emp.OnetoOne;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

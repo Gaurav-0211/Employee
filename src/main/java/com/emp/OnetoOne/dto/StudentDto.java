@@ -1,4 +1,4 @@
-package com.OnetoOne.dto;
+package com.emp.OnetoOne.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

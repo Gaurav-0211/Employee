@@ -1,11 +1,9 @@
-package com.OnetoOne.service.impl;
+package com.emp.OnetoOne.service.impl;
 
-import com.OnetoOne.dto.BookDto;
-import com.OnetoOne.dto.StudentDto;
-import com.OnetoOne.model.Student;
-import com.OnetoOne.repo.StudentRepository;
-import com.OnetoOne.service.BookService;
-import com.OnetoOne.service.StudentService;
+import com.emp.OnetoOne.dto.StudentDto;
+import com.emp.OnetoOne.model.Student;
+import com.emp.OnetoOne.repo.StudentRepository;
+import com.emp.OnetoOne.service.StudentService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.OnetoOne.service;
+package com.emp.OnetoOne.service;
 
-import com.OnetoOne.dto.StudentDto;
+import com.emp.OnetoOne.dto.StudentDto;
 
 import java.util.List;
 

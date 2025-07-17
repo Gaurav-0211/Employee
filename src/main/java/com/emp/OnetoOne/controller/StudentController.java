@@ -1,7 +1,7 @@
-package com.OnetoOne.controller;
+package com.emp.OnetoOne.controller;
 
-import com.OnetoOne.dto.StudentDto;
-import com.OnetoOne.service.StudentService;
+import com.emp.OnetoOne.dto.StudentDto;
+import com.emp.OnetoOne.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

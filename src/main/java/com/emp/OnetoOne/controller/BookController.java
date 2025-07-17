@@ -1,8 +1,7 @@
-package com.OnetoOne.controller;
+package com.emp.OnetoOne.controller;
 
-import com.OnetoOne.dto.BookDto;
-import com.OnetoOne.repo.BookRepository;
-import com.OnetoOne.service.BookService;
+import com.emp.OnetoOne.dto.BookDto;
+import com.emp.OnetoOne.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
